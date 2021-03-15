@@ -3,7 +3,6 @@
         <meta charset= "UTF-8">
         <title>Edit Post</title>
     </head>
-
     <body>
         @if (Session::has('post_update'))
         <span>{{Session::get('post_update')}}</span>

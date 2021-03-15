@@ -30,9 +30,10 @@ class PostController extends Controller
             'name'=>$request->name,
             'content'=>$request->content
         ]);
-        return back()->with('post_update','Post update successfully');
+        return back()->with('post_update', 'Post update successfully');
     }
     public function deletePost($id){
-
+        DB::table('posts')->where('id', $id)->delete();
+        return back()->with('post_delete', 'Post delete successfully');
     }
 }
