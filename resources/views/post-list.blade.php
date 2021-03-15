@@ -19,5 +19,6 @@
         ------------------
         </p>
         @endforeach
+        {{ $posts->links() }}
     </body>
 </html>
