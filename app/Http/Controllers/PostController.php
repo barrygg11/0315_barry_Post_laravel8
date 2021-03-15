@@ -19,7 +19,7 @@ class PostController extends Controller
         return back()->with('post_add','Post added successfully');
     }
     public function postList(){
-        $posts = DB::table('posts')->get();
-        return view ('post-list', compact('posts'));
+        $posts = DB::table('posts')->paginate(5);
+        return view ('post-list', ['posts'=>$posts]);
     }
 }
